@@ -1,0 +1,7 @@
+= ustreamr
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 Yu Tsuda. See LICENSE for details.
