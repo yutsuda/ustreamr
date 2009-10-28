@@ -1,6 +1,7 @@
 = ustreamr
 
-Description goes here.
+Ustream API wrapper for Ruby
+
 
 == Copyright
 
