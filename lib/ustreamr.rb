@@ -24,6 +24,7 @@ end
 require 'open-uri'
 
 # rubygems library
+require 'rubygems'
 require 'json'
 
 # local library 

@@ -1,8 +1,8 @@
 module Ustreamr::Command
 
  :private
-  def create_api_uri(obj)
-    
+  def create_api_uri(base_uri, command_uid, command)
+    return [base_uri, URI.encode(command_uid), command].join('/')
   end
 
   def get(uri)

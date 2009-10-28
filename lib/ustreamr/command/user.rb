@@ -1,12 +1,13 @@
 class Ustreamr::User
   include Ustreamr::Command
 
-  def initialize(format)
-    @base_uri = [Ustreamr::Base::api_host, Ustreamr::Base::format, 'user'].join('/')
+  def initialize
+    @@base_uri = [Ustreamr::Base::api_host, Ustreamr::Base::format, 'user'].join('/')
   end
 
   def get_info(user_name)
-    @uri = [@base_uri, user_name, ''].join('/') + '?'
+    uri = create_api_uri(@@base_uri, user_name, 'getInfo')
+    return get(uri)
   end
 
   def get_value_of(user_name)

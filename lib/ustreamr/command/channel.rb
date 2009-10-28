@@ -33,7 +33,7 @@ class Ustreamr::Channel
   #
   #
   def get_info(channel_name)
-    uri = [@@base_uri, channel_name, 'getInfo'].join('/')
+    uri = create_api_uri(@@base_uri, channel_name, 'getInfo')
     return get(uri)
   end
 	    
@@ -63,7 +63,7 @@ class Ustreamr::Channel
   #
   # 
   def get_value_of(channel_name, parameter)
-    uri = [@@base_uri, channel_name, 'getValueOf'].join('/')
+    uri = create_api_uri(@@base_uri, channel_name, 'getValueOf')
     return get_with_parameters(uri, parameter)
   end
 
@@ -127,7 +127,7 @@ class Ustreamr::Channel
   # 
   # 
   def get_embed_tag(channel_name)
-    uri = [@@base_uri, channel_name, 'getEmbedTag'].join('/')
+    uri = create_api_uri(@@base_uri, channel_name, 'getEmbedTag')
     return get(uri)
   end
 
@@ -158,7 +158,7 @@ class Ustreamr::Channel
   # 
   # 
   def get_custom_embed_tag(channel_name)
-    uri = [@@base_uri, channel_name, 'getCustomEmbedTag'].join('/')
+    uri = create_api_uri(@@base_uri, channel_name, 'getCustomEmbedTag')
     return get(uri)
   end
 
@@ -174,7 +174,7 @@ class Ustreamr::Channel
   # But if not, then all channels will be listed in the results. 
   #
   # === Parameters
-  # +channel_name+::
+  # * +channel_name+ -
   #  
   #
   # === Return Value
@@ -192,7 +192,7 @@ class Ustreamr::Channel
   # 
   # 
   def list_all_channels(channel_name)
-    uri = [@@base_uri, channel_name, 'listAllChannels'].join('/')
+    uri = create_api_uri(@@base_uri, channel_name, 'listAllChannles')
     return get(uri)
   end
 
@@ -220,7 +220,7 @@ class Ustreamr::Channel
   # 
   # 
   def get_comments(channel_name)
-    uri = [@@base_uri, channel_name, 'getComments'].join('/')
+    uri = create_api_uri(@@base_uri, channel_name, 'getComments')
     return get(uri)
   end
 
@@ -246,7 +246,7 @@ class Ustreamr::Channel
   # 
   # 
   def get_tags
-    uri = [@@base_uri, channel_name, 'getTags'].join('/')
+    uri = create_api_uri(@@base_uri, channel_name, 'getTags')
     return get(uri)
   end
 
@@ -260,7 +260,7 @@ class Ustreamr::Channel
   # Search Engine.
   #
   # === Parameters
-  # +channel_name+::
+  # * +channel_name+ -
   #  
   #
   # === Return Value
