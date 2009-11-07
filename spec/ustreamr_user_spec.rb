@@ -12,10 +12,10 @@ describe "Ustreamr::User" do
     result.class.should == Hash
   end
 
-  #it "should success getValueOf" do 
-  #  result = @channel_command.get_value_of(@channel_name, :description)
-  #  result.class.should == String
-  #end
+  it "should success getValueOf" do 
+    result = @user_command.get_value_of(@user_name, :about)
+    result.class.should == String
+  end
 
   #it "should success getId" do 
   #  result = @channel_command.get_id(@channel_name)
