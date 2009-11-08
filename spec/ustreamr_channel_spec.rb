@@ -22,5 +22,4 @@ describe "Ustreamr::Channel" do
     result.to_i.class.should == Fixnum
   end
 
-
 end

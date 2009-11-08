@@ -110,6 +110,9 @@ class Ustreamr::User
   # get the very same information by performing a search under the "channel" 
   # subject area for channels with that associated user ID.
   #
+  # +URL GET method example+
+  #  http://api.ustream.tv/html/user/apiuser/listAllChannels?key=yourDevKey
+  #
   # === Parameters
   # * +user_name+ -
   #  
@@ -129,11 +132,40 @@ class Ustreamr::User
   # 
   # 
   def list_all_channels(user_name)
-  
+    uri = create_api_uri(@@base_uri, user_name, 'listAllChannels')
+    return get(uri)
   end
 
+
+  # Get the list of all videos that belongs to the user 
+  # 
+  # This command returns all the videos belonging to the user specified in 
+  # the UID provided.
+  #
+  # +URL GET method example+
+  #  http://api.ustream.tv/html/user/apiuser/listAllVideos?key=yourDevKey
+  #
+  # === Parameters
+  # * +user_name+ -
+  #  
+  #
+  # === Return Value
+  #
+  #
+  #
+  # === Exceptions
+  # None
+  #
+  #
+  # === Example
+  #
+  #
+  # 
+  # 
+  # 
   def list_all_videos(user_name)
-  
+    uri = create_api_uri(@@base_uri, user_name, 'listAllVideos')
+    return get(uri)
   end
 
   def get_comments(user_name)

@@ -22,4 +22,14 @@ describe "Ustreamr::User" do
     result.to_i.class.should == Fixnum
   end
 
+  it "should success list_all_channels" do 
+    result = @user_command.list_all_channels(@user_name)
+    result.class.should == Array
+  end
+
+  it "should success list_all_videos" do 
+    result = @user_command.list_all_videos(@user_name)
+    result.class.should == Array
+  end
+
 end

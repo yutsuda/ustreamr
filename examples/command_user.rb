@@ -22,6 +22,12 @@ def main()
   puts "\n##### getId #{user_name}"
   p user_command.get_id(user_name)
 
+  puts "\n##### listAllChannels #{user_name}"
+  p user_command.list_all_channels(user_name)
+
+  puts "\n##### listAllVideos #{user_name}"
+  p user_command.list_all_videos(user_name)
+
 end
 
 if $0 == __FILE__
