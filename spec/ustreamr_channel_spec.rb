@@ -13,8 +13,8 @@ describe "Ustreamr::Channel" do
   end
 
   it "should success getValueOf" do 
-    result = @channel_command.get_value_of(@channel_name, :description)
-    result.class.should == String
+    result = @channel_command.get_value_of(@channel_name, :id)
+    result.to_i.class.should == Fixnum
   end
 
   it "should success getId" do 

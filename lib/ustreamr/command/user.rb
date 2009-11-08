@@ -69,8 +69,37 @@ class Ustreamr::User
     return get_with_parameters(uri, parameter)
   end
 
-  def get_id(user_name)
 
+  # Get the integer UID for the channel    
+  # 
+  # This command returns just the integer UID for the channel. This is a 
+  # shortcut method to getValueOf for "uid".  The input paramater is a text 
+  # string containing the channel title as represented in the channel URL, 
+  # or else a fully qualified pathname to the channel page (http://www.ust-
+  # ream.tv/channel/api-test-show ) For a detailed discussion of how the cha-
+  # nnel title is extracted from the URL please refer to the table Fields in 
+  # a Generalized API Request earlier in the documentation.
+  #
+  # +URL GET method example+
+  #  http://api.ustream.tv/html/channel/api-test-show/getId?key=yourDevKey
+  #
+  # === Parameters
+  # * +channel_name+ -
+  #  
+  #
+  # === Return Value
+  #
+  #
+  # === Exceptions
+  # None
+  #
+  # === Example
+  #
+  #
+  # 
+  # 
+  def get_id(user_name)
+    return get_value_of(user_name, :id)
   end
 
   def list_all_channels(user_name)

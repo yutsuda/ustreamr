@@ -19,6 +19,9 @@ def main()
   puts "\n##### getValueOf #{user_name}"
   p user_command.get_value_of(user_name, :about)
 
+  puts "\n##### getId #{user_name}"
+  p user_command.get_id(user_name)
+
 end
 
 if $0 == __FILE__

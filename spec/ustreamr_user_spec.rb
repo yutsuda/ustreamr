@@ -13,14 +13,13 @@ describe "Ustreamr::User" do
   end
 
   it "should success getValueOf" do 
-    result = @user_command.get_value_of(@user_name, :about)
-    result.class.should == String
+    result = @user_command.get_value_of(@user_name, :id)
+    result.to_i.class.should == Fixnum
   end
 
-  #it "should success getId" do 
-  #  result = @channel_command.get_id(@channel_name)
-  #  result.to_i.class.should == Fixnum
-  #end
-
+  it "should success getId" do 
+    result = @user_command.get_id(@user_name)
+    result.to_i.class.should == Fixnum
+  end
 
 end
