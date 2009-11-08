@@ -29,7 +29,12 @@ describe "Ustreamr::User" do
 
   it "should success list_all_videos" do 
     result = @user_command.list_all_videos(@user_name)
-    result.class.should == Array
+    [Array, NilClass].include?(result.class).should be_true
   end
 
+  it "should success get_comments" do 
+    result = @user_command.get_comments(@user_name)
+    [Array, NilClass].include?(result.class).should be_true
+  end
 end
+

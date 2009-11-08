@@ -28,6 +28,9 @@ def main()
   puts "\n##### listAllVideos #{user_name}"
   p user_command.list_all_videos(user_name)
 
+  puts "\n##### getComments #{user_name}"
+  p user_command.get_comments(user_name)
+
 end
 
 if $0 == __FILE__

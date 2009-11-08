@@ -168,8 +168,35 @@ class Ustreamr::User
     return get(uri)
   end
 
+
+  # Get comments for the user profile
+  #
+  # This command returns any comments for the user profile specified by 
+  # the UID.  They will be returned as an array of comment arrays.  Output 
+  # is truncated to the ten most recent comments.
+  #
+  # +URL GET method example+
+  #  http://api.ustream.tv/html/user/apiuser/getComments?key=yourDevKey
+  #
+  # === Parameters
+  # * +user_name+ -
+  #  
+  # === Return Value
+  #
+  #
+  #
+  # === Exceptions
+  # None
+  #
+  # === Example
+  #
+  #
+  # 
+  # 
+  # 
   def get_comments(user_name)
-  
+    uri = create_api_uri(@@base_uri, user_name, 'getComments')
+    return get(uri)
   end
 
   #def search(user_name, search_scope, :sort_options)
