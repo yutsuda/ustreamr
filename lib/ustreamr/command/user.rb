@@ -21,7 +21,7 @@ class Ustreamr::User
   #  http://api.ustream.tv/html/user/apiuser/getInfo?key=yourDevKey
   #
   # === Parameters
-  # * +channel_name+ -
+  # * +user_name+ -
   #  
   #
   # === Return Value
@@ -51,8 +51,9 @@ class Ustreamr::User
   # http://api.ustream.tv/html/user/apiuser/getValueOf/id?key=yourDevKey
   #
   # === Parameters
-  # * +channel_name+ -
-  #  
+  # * +user_name+ -
+  # * +parameter+ -
+  #
   # === Return Value
   #
   #
@@ -84,7 +85,7 @@ class Ustreamr::User
   #  http://api.ustream.tv/html/channel/api-test-show/getId?key=yourDevKey
   #
   # === Parameters
-  # * +channel_name+ -
+  # * +user_name+ -
   #  
   #
   # === Return Value
@@ -102,6 +103,31 @@ class Ustreamr::User
     return get_value_of(user_name, :id)
   end
 
+
+  # Get the list of all channels that belongs to the user 
+  # 
+  # This command returns all the channels belonging to a user. You could 
+  # get the very same information by performing a search under the "channel" 
+  # subject area for channels with that associated user ID.
+  #
+  # === Parameters
+  # * +user_name+ -
+  #  
+  #
+  # === Return Value
+  #
+  #
+  #
+  # === Exceptions
+  # None
+  #
+  #
+  # === Example
+  #
+  #
+  # 
+  # 
+  # 
   def list_all_channels(user_name)
   
   end
