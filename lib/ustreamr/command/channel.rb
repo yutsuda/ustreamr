@@ -245,7 +245,7 @@ class Ustreamr::Channel
   #
   # 
   # 
-  def get_tags
+  def get_tags(channel_name)
     uri = create_api_uri(@@base_uri, channel_name, 'getTags')
     return get(uri)
   end

@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe "Ustreamr::User" do
   before do
     @stream_command = Ustreamr::Stream.new
-	@user_command = Ustreamr::User.new
+    @user_command = Ustreamr::User.new
     @user_name = @stream_command.get_random[:user_name]
   end
 

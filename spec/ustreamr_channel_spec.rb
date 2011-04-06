@@ -22,4 +22,32 @@ describe "Ustreamr::Channel" do
     result.to_i.class.should == Fixnum
   end
 
+  it "should success getEmbedTag" do 
+    result = @channel_command.get_embed_tag(@channel_name)
+    result.class.should == String
+  end
+
+  it "should success getCustomEmbedTag" do 
+    result = @channel_command.get_custom_embed_tag(@channel_name)
+    result.class.should == String
+  end
+
+  it "should success listAllChannels" do 
+    result = @channel_command.list_all_channels(@channel_name)
+    #result.class.should == String
+  end
+
+  it "should success getComments" do 
+    result = @channel_command.get_comments(@channel_name)
+    result.class.should == Array
+    [Hash, NilClass].include?(result.first.class).should be_true
+  end
+
+  it "should success getTags" do 
+    result = @channel_command.get_tags(@channel_name)
+    result.class.should == Array
+    result.first.class.should == String
+  end
+
+
 end

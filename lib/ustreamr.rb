@@ -21,14 +21,22 @@ end
 
 
 # standard library
-require 'open-uri'
+%w(
+  open-uri
+).each{|lib| require lib}
 
 # rubygems library
-require 'rubygems'
-require 'json'
+%w(
+  rubygems
+  json
+  twitter
+).each{|gem| require gem}
 
-# local library 
-require_local 'ustreamr/version'
-require_local 'ustreamr/base'
-require_local 'ustreamr/ext'
-require_local 'ustreamr/command'
+# local files
+%w(
+  ustreamr/version
+  ustreamr/base
+  ustreamr/ext
+  ustreamr/command
+).each{|file| require_local file}
+
