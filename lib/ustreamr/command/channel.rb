@@ -276,9 +276,9 @@ class Ustreamr::Channel
   # 
   # 
   # 
-  def search
-#    uri = [@@base_uri, channel_name, 'getEmbedTag'].join('/')
-#    return get(uri)
+  def search(search_scope, query, params)
+    uri = [@@base_uri, search_scope, 'search', query].join('/')
+    return get_with_parameters(uri, params)
   end
 
 end

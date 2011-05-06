@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 module Ustreamr::Command
 
  :private
@@ -7,22 +8,24 @@ module Ustreamr::Command
 
   def get(uri)
     result = open(uri)
-    if result.class == StringIO
-      return JSON.parse(result.string).to_sym[:results]
-    else 
-      return nil
-    end 
+    return JSON.parse(result.read).to_sym[:results]
   end 
 
-  def get_with_parameters(uri, parameters)
-    uri_with_parameters = [uri, parameters.to_s].join('/')
-    return get(uri_with_parameters)
+  def get_with_parameters(uri, params = {})
+    params_str = params.map{|k, v|
+      k.to_s + '=' + v.to_s
+    }.join('&')
+    uri_with_params = uri + "?" + params_str
+    puts uri_with_params
+    return get(uri_with_params)
   end
 
 end
 
-require_local 'ustreamr/command/user'
-require_local 'ustreamr/command/channel'
-require_local 'ustreamr/command/video'
-require_local 'ustreamr/command/stream'
-require_local 'ustreamr/command/system'
+%w(
+ustreamr/command/user
+ustreamr/command/channel
+ustreamr/command/video
+ustreamr/command/stream
+ustreamr/command/system
+).each{|file| require_local file}

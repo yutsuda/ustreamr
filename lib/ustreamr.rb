@@ -29,7 +29,6 @@ end
 %w(
   rubygems
   json
-  twitter
 ).each{|gem| require gem}
 
 # local files
