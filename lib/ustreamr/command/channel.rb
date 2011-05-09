@@ -63,8 +63,8 @@ class Ustreamr::Channel
   #
   # 
   def get_value_of(channel_name, parameter)
-    uri = create_api_uri(@@base_uri, channel_name, 'getValueOf')
-    return get_with_parameters(uri, parameter)
+    uri = [create_api_uri(@@base_uri, channel_name, 'getValueOf'), parameter.to_s].join('/')
+    return get(uri)
   end
 
 		   

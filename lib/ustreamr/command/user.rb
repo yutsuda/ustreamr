@@ -66,8 +66,8 @@ class Ustreamr::User
   #
   # 
   def get_value_of(user_name, parameter)
-    uri = create_api_uri(@@base_uri, user_name, 'getValueOf')
-    return get_with_parameters(uri, parameter)
+    uri = [create_api_uri(@@base_uri, user_name, 'getValueOf'), parameter.to_s].join('/')
+    return get(uri)
   end
 
 
@@ -199,8 +199,10 @@ class Ustreamr::User
     return get(uri)
   end
 
-  #def search(user_name, search_scope, :sort_options)
- 
+  
+  #def search(search_scope, query, params)
+  #  uri = [@@base_uri, search_scope, 'search', query].join('/')
+  #  return get_with_parameters(uri, params)
   #end
 
 end
