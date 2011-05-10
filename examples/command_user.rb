@@ -31,6 +31,11 @@ def main()
   puts "\n##### getComments #{user_name}"
   p user_command.get_comments(user_name)
 
+  puts "\n##### search {live, all}"
+  p user_command.search("live", 
+                        "all", 
+                        {:limit=>3, :page=>1})
+
 end
 
 if $0 == __FILE__

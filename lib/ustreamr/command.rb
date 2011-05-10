@@ -13,7 +13,6 @@ module Ustreamr::Command
   def get_with_parameters(uri, params = {})
     params_str = params.map{|k, v| k.to_s + '=' + v.to_s}.join('&')
     uri_with_params = uri + '?' + params_str
-    puts uri_with_params
     return get(uri_with_params)
   end
 

@@ -29,6 +29,13 @@ def main()
   
   puts "\n##### getComments #{channel_name}"
   p channel_command.get_comments(channel_name)
+
+  puts "\n##### search {live, all}"
+  p channel_command.search("live", 
+                           "all", 
+                           {:limit=>3, :page=>1})
+
+
 end
 
 if $0 == __FILE__
